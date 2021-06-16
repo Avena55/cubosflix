@@ -1,0 +1,49 @@
+.bag {
+    height: 495px;
+    width: 361px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-right: 24px;
+    position: sticky;
+    top: 40px;
+    
+}
+
+.bag-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #A785ED;
+    height: 80px;          
+}
+
+.bag-title h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-left: 4px;
+}
+
+.bag-container {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 32px;
+}
+
+.bag-container h2 {
+    font-weight: 700;
+    font-size: 28px;
+    align-self: center;
+}
+
+.bag-container h3 {
+    font-weight: 500;
+    font-size: 18px;
+    align-self: center;
+    margin-top: 8px;
+}
+
+.bag-container svg {
+    align-self: center;
+    margin-top: 20px;
+    height: 275px;
+    width: 275px;
+}

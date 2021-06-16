@@ -1,0 +1,86 @@
+.content {
+    padding-left: 96px;
+    padding-bottom: 34px;
+  }
+
+.content h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.movie-grid, .topMovie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 195px);
+    gap: 24px;
+    max-width: 1083px;
+}
+
+.topMovie-grid {
+    margin-bottom: 40px;
+}
+
+.movie-card {
+    height: 347px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.movie-container h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 143px;
+    font-size: 18px;
+}
+
+.movie-container h3:hover {
+    overflow: visible;
+    white-space: normal;
+       
+}
+
+.starRate {
+    display: flex;
+    color: #FBCD6E;
+    margin-top: auto;
+    align-items: center;
+}
+
+.starRate svg {
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+        
+}
+
+.buyButton {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    padding: 4px 8px;
+    font-size: 14px;
+    background: linear-gradient(349.65deg, #A785ED, #8B54FB);
+    color: #EEE5FF;
+    height: 29px;    
+}
+
+.buyButton:hover {
+    background: linear-gradient(0deg, rgba(46, 46, 46, 0.45), rgba(46, 46, 46, 0.45)), #A785ED;
+}
+
+.buyButton:active {
+    background: linear-gradient(0deg, rgba(123, 123, 123, 0.45), rgba(123, 123, 123, 0.45)), #A785ED;
+}
+
