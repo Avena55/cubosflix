@@ -1,10 +1,10 @@
 import './style.css';
 
-function Sacola({ bagMovies, precoTotal }) {
+function Sacola({ bagMovies, precoTotal, handlePurchase }) {
     return (
         <div className='bag'>
             <div className='bag-title'>
-                <svg width="51" height="51" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M20.7352 35.8354L11.096 30.2701C7.55527 28.2259 5.57732 25.3787 9.32066 20.6769L14.2465 14.2198C16.205 11.9261 18.4107 11.889 19.8482 12.7189L31.6013 19.5046C33.0598 20.3467 33.9927 22.2945 33.1022 25.1062L29.9732 32.6006C27.9923 37.5449 24.276 37.8796 20.7352 35.8354Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path opacity="0.4" d="M30.828 18.72C32.4188 15.9648 31.4748 12.4417 28.7196 10.851V10.851C27.3961 10.0794 25.8197 9.86674 24.339 10.2601C22.8584 10.6535 21.5954 11.6205 20.8294 12.9473V12.9473" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M26.2617 23.0168L26.2089 22.9863" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -15,12 +15,66 @@ function Sacola({ bagMovies, precoTotal }) {
             <div className='bag-container'>
                 {
                     bagMovies.map(movie => (
-                        <div key={movie.poster_path}>
-                            <span>{movie.title}      </span>
-                            <span>{movie.quantity}                    </span>
+                        <div key={movie.poster_path} className='bag-movie'>
+                            <img src={movie.poster_path} alt={movie.title} />
+                            <div className='bag-movie-info'>
+                                <span className='bag-movie-title'>{movie.title}</span>
+                                <span className='bag-movie-price'>R$ {movie.price}</span>
+                            </div>
+                            <div className='bag-movie-buttons'>
+                                <svg onClick={() => handlePurchase(1, movie.title)} className='bag-plus' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_b)">
+                                <rect width="24" height="24" fill="black" fillOpacity="0.37"/>
+                                </g>
+                                <line x1="11.75" y1="4" x2="11.75" y2="19" stroke="#6FCF97" strokeWidth="1.5"/>
+                                <line x1="19" y1="11.75" x2="4" y2="11.75" stroke="#6FCF97" strokeWidth="1.5"/>
+                                <defs>
+                                <filter id="filter0_b" x="-15" y="-15" width="54" height="54" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="7.5"/>
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+                                </filter>
+                                </defs>
+                                </svg>
+                                {movie.quantity}
+                                {movie.quantity === 1 && 
+                                    <svg onClick={() => handlePurchase(-1, movie.title)} className='bag-trash' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g filter="url(#filter0_c)">
+                                    <rect width="24" height="24" fill="black" fillOpacity="0.37"/>
+                                    </g>
+                                    <path opacity="0.4" d="M19.325 9.46777C19.325 9.46777 18.782 16.2028 18.467 19.0398C18.317 20.3948 17.48 21.1888 16.109 21.2138C13.5 21.2608 10.888 21.2638 8.28003 21.2088C6.96103 21.1818 6.13803 20.3778 5.99103 19.0468C5.67403 16.1848 5.13403 9.46777 5.13403 9.46777" stroke="#FF7366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M20.7082 6.23926H3.75024" stroke="#FF7366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M17.4406 6.23949C16.6556 6.23949 15.9796 5.68449 15.8256 4.91549L15.5826 3.69949C15.4326 3.13849 14.9246 2.75049 14.3456 2.75049H10.1126C9.53358 2.75049 9.02558 3.13849 8.87558 3.69949L8.63258 4.91549C8.47858 5.68449 7.80258 6.23949 7.01758 6.23949" stroke="#FF7366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <defs>
+                                    <filter id="filter0_c" x="-15" y="-15" width="54" height="54" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                                    <feGaussianBlur in="BackgroundImage" stdDeviation="7.5"/>
+                                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+                                    </filter>
+                                    </defs>
+                                    </svg>} 
+                                    {movie.quantity > 1 && 
+                                        <svg onClick={() => handlePurchase(-1, movie.title)} className='bag-minus' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_d)">
+                                        <rect width="24" height="24" fill="black" fillOpacity="0.37"/>
+                                        </g>
+                                        <path d="M20.7082 11.5H3.75024" stroke="#FF7366" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <defs>
+                                        <filter id="filter0_d" x="-15" y="-15" width="54" height="54" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                                        <feGaussianBlur in="BackgroundImage" stdDeviation="7.5"/>
+                                        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+                                        </filter>
+                                        </defs>
+                                        </svg>}
+
+                            </div>
                         </div>
                     ))}
-                {bagMovies.length > 0 && <h2>{precoTotal}</h2>}      
+                {bagMovies.length > 0 && <button className='confirmButton'>Confirme seus dados <span>R$ {precoTotal}</span></button> }      
                 {!bagMovies.length > 0 && <>  
                 <h2>Sua sacola está vazia</h2>
                 <h3>Adicione filmes agora</h3>

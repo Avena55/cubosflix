@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Header from './components/Header'
-import Filmes from './components/Filmes'
-import Sacola from './components/Sacola'
+import Header from './components/Header';
+import Filmes from './components/Filmes';
+import Sacola from './components/Sacola';
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);  
   const [topMovies, setTopMovies] = useState([]);
   const [bagMovies, setBagMovies] = useState([]);
   const [precoTotal, setPrecoTotal] = useState(0);
 
   useEffect(() => {
     handlePopulateMovies();
-  }, [])
+  }, []);
   useEffect(() => {
     handlePurchase();
-  }, [bagMovies, precoTotal])
+  });  
 
   async function handlePopulateMovies() {
     const response = await fetch('https://tmdb-proxy-workers.vhfmag.workers.dev/3/discover/movie?language=pt-BR', {
@@ -71,7 +71,7 @@ function App() {
     <div className="app">
       <Header />      
       <Filmes movies={movies} topMovies={topMovies} handlePurchase={handlePurchase} />   
-      <Sacola bagMovies={bagMovies} precoTotal={precoTotal} />
+      <Sacola bagMovies={bagMovies} precoTotal={precoTotal} handlePurchase={handlePurchase} />
     </div>
   );
 }

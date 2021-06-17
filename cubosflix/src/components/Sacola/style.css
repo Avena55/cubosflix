@@ -1,11 +1,11 @@
 .bag {
-    height: 495px;
-    width: 361px;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 312px;
+    height: 80vh;
+    background-color: #1d2226;
     margin-right: 24px;
     position: sticky;
-    top: 40px;
-    
+    top: 10vh;
+    overflow-y: auto;      
 }
 
 .bag-title {
@@ -13,37 +13,110 @@
     justify-content: center;
     align-items: center;
     background: #A785ED;
-    height: 80px;          
+    height: 72px;
+    width: 100%;         
 }
 
 .bag-title h2 {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     margin-left: 4px;
 }
 
 .bag-container {
     display: flex;
     flex-direction: column;
-    padding: 36px 32px;
+    padding: 24px 16px 17px 16px;
+    gap: 24px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .bag-container h2 {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     align-self: center;
 }
 
 .bag-container h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     align-self: center;
     margin-top: 8px;
 }
 
-.bag-container svg {
+.bag-container>svg {
     align-self: center;
     margin-top: 20px;
-    height: 275px;
-    width: 275px;
+    
+}
+
+.bag-movie {
+    display: flex;
+    align-items: center;    
+}
+
+.bag-movie img {
+    width: 43px;
+    height: 67px;
+    margin-right: 13px;    
+}
+
+.bag-movie-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bag-movie-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.bag-movie-price {
+    font-weight: 400;
+}
+
+.bag-movie-buttons {
+    display: flex;
+}
+
+.bag-minus, .bag-trash {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.bag-plus {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.bag-movie-buttons svg:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.bag-movie-buttons svg:active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.confirmButton {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    background: #E25EBF;
+    padding: 16px;
+}
+
+.confirmButton:hover {
+    background: linear-gradient(0deg, rgba(225, 123, 123, 0.45), rgba(225, 123, 123, 0.45)), #FFB6EB;
+    box-shadow: 0px 16px 24px -12px rgba(226, 94, 191, 0.16);
+}
+
+.confirmButton:active {
+    background: linear-gradient(0deg, rgba(225, 123, 123, 0.6), rgba(225, 123, 123, 0.6)), #FFB6EB;
+    box-shadow: 0px 16px 24px -12px rgba(226, 94, 191, 0.5);
 }

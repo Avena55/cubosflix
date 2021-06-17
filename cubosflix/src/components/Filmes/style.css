@@ -5,15 +5,15 @@
 
 .content h2 {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 24px;
 }
 
 .movie-grid, .topMovie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 195px);
+    grid-template-columns: repeat(auto-fit, 168px);
     gap: 24px;
-    max-width: 1083px;
+    max-width: 937px;
 }
 
 .topMovie-grid {
@@ -21,7 +21,7 @@
 }
 
 .movie-card {
-    height: 347px;
+    height: 301px;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -39,13 +39,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 143px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .movie-container h3:hover {
     overflow: visible;
-    white-space: normal;
-       
+    white-space: normal;       
 }
 
 .starRate {
@@ -70,10 +69,9 @@
     justify-content: space-between;
     font-weight: 700;
     padding: 4px 8px;
-    font-size: 14px;
+    font-size: 12px;
     background: linear-gradient(349.65deg, #A785ED, #8B54FB);
-    color: #EEE5FF;
-    height: 29px;    
+    color: #EEE5FF;     
 }
 
 .buyButton:hover {
