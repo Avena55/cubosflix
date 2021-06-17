@@ -1,6 +1,7 @@
 import './style.css'
 
-function Filmes({ movies, topMovies, handlePurchase }) {
+function Filmes({ movies, topMovies, handlePurchase}) {
+    
     return (
 
         <div className='content'>
@@ -35,7 +36,7 @@ function Filmes({ movies, topMovies, handlePurchase }) {
                 <h2>Filmes</h2>
                 <div className='movie-grid'>
                 { movies.map(movie => (
-                    <div key={movie.title} className='movie-card' style={{background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(${movie.poster_path}) center center / cover no-repeat`}}>
+                    movie.searched !== 'hidden' && <div hidden={movie.searched} key={movie.title} className='movie-card' style={{background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(${movie.poster_path}) center center / cover no-repeat`}}>
                         <div className='movie-container'>
                             <h3>{movie.title}</h3>
                             <div className='starRate'>
